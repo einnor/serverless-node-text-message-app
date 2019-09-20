@@ -2,6 +2,7 @@ service: serverless-node-text-message-app
 
 plugins:
   - serverless-dotenv-plugin
+  - serverless-finch
 
 provider:
   name: aws
@@ -22,9 +23,6 @@ functions:
           method: post
           integration: lambda
           cors: true
-
-plugins:
-  - serverless-finch
 
 custom:
   client:
