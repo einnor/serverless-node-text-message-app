@@ -6,10 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "Serverless",
+    "Node.js",
+    "AWS",
+    "Twilio",
+    "SMS",
+    "Text",
+    "Single",
+    "Page",
+    "App"
+  ],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.88.0",
+    "serverless-finch": "^2.4.3",
+    "twilio": "^3.35.0"
+  },
   "devDependencies": {
     "serverless-dotenv-plugin": "^2.1.1"
   }
