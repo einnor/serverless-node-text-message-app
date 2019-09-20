@@ -8,6 +8,10 @@ export interface IEvent {
   body: IBody;
 };
 
-export interface RecaptchaResponse extends IBody {
+export interface RecaptchaData {
   success: boolean;
+}
+
+export interface RecaptchaResponse extends IBody {
+  data: RecaptchaData;
 };

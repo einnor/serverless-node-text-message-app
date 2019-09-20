@@ -16,7 +16,7 @@ provider:
 
 functions:
   validateRecaptchaSendSms:
-    handler: handler.validateAndSend
+    handler: dist/handler.validateAndSend
     events:
       - http:
           path: api/sendSms

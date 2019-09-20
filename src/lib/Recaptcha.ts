@@ -13,11 +13,11 @@ export const validateRecaptcha = async (captcha: string, callback: Callback) => 
 
   try {
     const recaptchaResponse: RecaptchaResponse = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${captcha}`);
-    console.log(recaptchaResponse);
+    console.log(recaptchaResponse.data);
 
     // const parsedBody = JSON.parse(body);
 
-    if (recaptchaResponse.success === false) {
+    if (recaptchaResponse.data.success === false) {
       const recaptchaFailedErrResponse = {
         headers: headers,
         statusCode: 200,
@@ -29,8 +29,6 @@ export const validateRecaptcha = async (captcha: string, callback: Callback) => 
 
       return callback(null, recaptchaFailedErrResponse);
     }
-
-    return recaptchaResponse;
   } catch (error) {
     const recaptchaErrResponse = {
       headers: headers,

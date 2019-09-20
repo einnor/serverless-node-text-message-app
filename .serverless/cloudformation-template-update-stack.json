@@ -105,10 +105,10 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-node-text-message-app/dev/1568989959779-2019-09-20T14:32:39.779Z/serverless-node-text-message-app.zip"
+          "S3Key": "serverless/serverless-node-text-message-app/dev/1568998973369-2019-09-20T17:02:53.369Z/serverless-node-text-message-app.zip"
         },
         "FunctionName": "serverless-node-text-message-app-dev-validateRecaptchaSendSms",
-        "Handler": "handler.validateAndSend",
+        "Handler": "dist/handler.validateAndSend",
         "MemorySize": 1024,
         "Role": {
           "Fn::GetAtt": [
@@ -133,14 +133,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ValidateRecaptchaSendSmsLambdaVersionrlwmYqnxDrG98XAPyD3mnV9rNSph3R1eaZC91qZIpOs": {
+    "ValidateRecaptchaSendSmsLambdaVersionOTmIirkzMA2TGPO2rDH8YpgOPQRROyBO2UejdvbdyM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ValidateRecaptchaSendSmsLambdaFunction"
         },
-        "CodeSha256": "ycLoFpz3S0HvVDRhu80DblyloHjGuZPX6TZUpA2D+y0="
+        "CodeSha256": "zYX6fDxMaCXn3GpFpaiI8NImmQYE0mDITOwCyRyFLFc="
       }
     },
     "ApiGatewayRestApi": {
@@ -414,7 +414,7 @@
         ]
       }
     },
-    "ApiGatewayDeployment1568989951645": {
+    "ApiGatewayDeployment1568998965997": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -474,7 +474,7 @@
     "ValidateRecaptchaSendSmsLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ValidateRecaptchaSendSmsLambdaVersionrlwmYqnxDrG98XAPyD3mnV9rNSph3R1eaZC91qZIpOs"
+        "Ref": "ValidateRecaptchaSendSmsLambdaVersionOTmIirkzMA2TGPO2rDH8YpgOPQRROyBO2UejdvbdyM"
       }
     },
     "ServiceEndpoint": {
