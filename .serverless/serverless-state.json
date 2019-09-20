@@ -11,7 +11,7 @@
       "runtime": "nodejs10.x",
       "environment": {
         "TWILIO_ACCOUNT_SID": "ACdc8a2b4ee3f2220d8bb69b8d2bcaa5a0",
-        "TWILIO_AUTH_TOKEN": "0a5c3a58cf6f3c6e5d71559eb2b54c84",
+        "TWILIO_AUTH_TOKEN": "f830ed3456a46ce5f328ac36b833ff91",
         "TWILIO_PHONE_NUMBER": "12054420251",
         "GOOGLE_RECAPTCHA_TOKEN": "6LcaXrkUAAAAAIstpHAoztkTB_1FMn6H5N5SGUU0",
         "BUCKET_NAME": "ronnies-node-text-message-app"
@@ -126,7 +126,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-node-text-message-app/dev/1568987276329-2019-09-20T13:47:56.329Z/serverless-node-text-message-app.zip"
+                "S3Key": "serverless/serverless-node-text-message-app/dev/1568989959779-2019-09-20T14:32:39.779Z/serverless-node-text-message-app.zip"
               },
               "FunctionName": "serverless-node-text-message-app-dev-validateRecaptchaSendSms",
               "Handler": "handler.validateAndSend",
@@ -142,7 +142,7 @@
               "Environment": {
                 "Variables": {
                   "TWILIO_ACCOUNT_SID": "ACdc8a2b4ee3f2220d8bb69b8d2bcaa5a0",
-                  "TWILIO_AUTH_TOKEN": "0a5c3a58cf6f3c6e5d71559eb2b54c84",
+                  "TWILIO_AUTH_TOKEN": "f830ed3456a46ce5f328ac36b833ff91",
                   "TWILIO_PHONE_NUMBER": "12054420251",
                   "GOOGLE_RECAPTCHA_TOKEN": "6LcaXrkUAAAAAIstpHAoztkTB_1FMn6H5N5SGUU0",
                   "BUCKET_NAME": "ronnies-node-text-message-app"
@@ -154,14 +154,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ValidateRecaptchaSendSmsLambdaVersionstk4pBsqPe9VlfXRB0KAeSm9HR3BUsJRHNcVeuB3jw": {
+          "ValidateRecaptchaSendSmsLambdaVersionrlwmYqnxDrG98XAPyD3mnV9rNSph3R1eaZC91qZIpOs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ValidateRecaptchaSendSmsLambdaFunction"
               },
-              "CodeSha256": "nVXLbOTo0pt6FGL2k0T3aJAQbPDCoHSY6STA1KwNb1I="
+              "CodeSha256": "ycLoFpz3S0HvVDRhu80DblyloHjGuZPX6TZUpA2D+y0="
             }
           },
           "ApiGatewayRestApi": {
@@ -435,7 +435,7 @@
               ]
             }
           },
-          "ApiGatewayDeployment1568987269930": {
+          "ApiGatewayDeployment1568989951645": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -495,7 +495,7 @@
           "ValidateRecaptchaSendSmsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ValidateRecaptchaSendSmsLambdaVersionstk4pBsqPe9VlfXRB0KAeSm9HR3BUsJRHNcVeuB3jw"
+              "Ref": "ValidateRecaptchaSendSmsLambdaVersionrlwmYqnxDrG98XAPyD3mnV9rNSph3R1eaZC91qZIpOs"
             }
           },
           "ServiceEndpoint": {
@@ -640,7 +640,7 @@
     "artifact": "/Users/ronnie/Workspace/serverless-node-text-message-app/.serverless/serverless-node-text-message-app.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-node-text-message-app/dev/1568987276329-2019-09-20T13:47:56.329Z",
+    "artifactDirectoryName": "serverless/serverless-node-text-message-app/dev/1568989959779-2019-09-20T14:32:39.779Z",
     "artifact": "serverless-node-text-message-app.zip"
   }
 }
