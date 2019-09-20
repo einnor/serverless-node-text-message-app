@@ -33,7 +33,7 @@ export const sendMessage = (to: string, message: string, callback: Callback) => 
         })
       };
 
-      return callback(null, twilioErrResponse);
+      return { error: true, errorResponse: twilioErrResponse, successResponse: null};
     }
 
     // If no errors: Return success response!
@@ -48,6 +48,8 @@ export const sendMessage = (to: string, message: string, callback: Callback) => 
       })
     };
 
-    callback(null, successResponse);
+    return { error: false, errorResponse: null, successResponse};
   });
+
+  return { error: false, errorResponse: null, successResponse: null };
 };

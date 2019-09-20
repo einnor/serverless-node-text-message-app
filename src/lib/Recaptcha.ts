@@ -1,9 +1,8 @@
-import { Callback} from 'aws-lambda';
 import axios from 'axios';
 import * as Config from '../lib/Config';
 import { RecaptchaResponse } from '../types';
 
-export const validateRecaptcha = async (captcha: string, callback: Callback) => {
+export const validateRecaptcha = async (captcha: string) => {
 
   // Load environment variable
   const recaptchaSecret = Config.get('GOOGLE_RECAPTCHA_TOKEN');
@@ -27,8 +26,10 @@ export const validateRecaptcha = async (captcha: string, callback: Callback) => 
         })
       };
 
-      return callback(null, recaptchaFailedErrResponse);
+      return { error: true, errorResponse: recaptchaFailedErrResponse};
     }
+
+    return { error: false, errorResponse: null };
   } catch (error) {
     const recaptchaErrResponse = {
       headers: headers,
@@ -40,6 +41,6 @@ export const validateRecaptcha = async (captcha: string, callback: Callback) => 
       }),
     };
 
-    return callback(null, recaptchaErrResponse);
+    return { error: true, errorResponse: recaptchaErrResponse};
   }
 };

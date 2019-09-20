@@ -4,7 +4,7 @@ import { validateRecaptcha } from '../lib/Recaptcha';
 import { IEvent } from '../types';
 import * as Config from '../lib/Config';
 
-export const validateAndSend: Handler = async (event: IEvent, context: Context, callback: Callback<APIGatewayProxyResult>) => {
+export const validateAndSend: Handler = async (event: IEvent, context: Context, callback: Callback) => {
   // Required in responses for CORS support to work
   const headers = {'Access-Control-Allow-Origin': '*'};
 
@@ -25,20 +25,14 @@ export const validateAndSend: Handler = async (event: IEvent, context: Context, 
     throw new Error('Captcha is invalid');
   }
 
-  try {
-    await validateRecaptcha(event.body.captcha, callback);
-    sendMessage(event.body.to, event.body.message, callback);
-  } catch (error) {
-    const errResponse = {
-      headers: headers,
-      statusCode: 500,
-      body: JSON.stringify({
-        status: 'fail',
-        message: 'Something went wrong.',
-        error: error
-      }),
-    };
-
-    return callback(null, errResponse);
+  const recaptchaResponse = await validateRecaptcha(event.body.captcha);
+  if (recaptchaResponse.error) {
+    return callback(null, recaptchaResponse.errorResponse);
   }
+  const twilioResponse = await sendMessage(event.body.to, event.body.message, callback);
+  if (twilioResponse.error) {
+    return callback(null, twilioResponse.errorResponse);
+  }
+
+  return callback(null, twilioResponse.successResponse);
 };

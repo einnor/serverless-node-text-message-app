@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "serverless deploy",
     "deploy-client": "serverless client deploy",
-    "local-validate-and-send": "NODE_ENV=test serverless invoke local --function validateRecaptchaSendSms"
+    "local-validate-and-send": "NODE_ENV=test serverless invoke local --function validateRecaptchaSendSms --path ./test-data.json"
   },
   "keywords": [
     "Serverless",
